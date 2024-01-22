@@ -18,11 +18,14 @@
 
 + 通过Lua脚本的`print`输出结果，可以在这个控制台中实时浏览
 
+<!-- <div align="center">
+    <img src="./assets/console-eg.png" alt="console" style="zoom:50%;" />
+    <img src="./assets/console-eg-2.png" alt="console" style="zoom:50%;" />
+</div> -->
 
 
-
-![console1](./assets/console-eg.png)
-![console2](./assets/console-eg-2.png)
+![console1](./assets/eg3.png)
+<!-- ![console2](./assets/console-eg-2.png) -->
 
 在创意工坊中，可以直接搜索`控制台`，然后通过`订阅`按钮，即可安装该mod，之后重启游戏，就可以看到控制台浮现在你的游戏界面左下角~
 

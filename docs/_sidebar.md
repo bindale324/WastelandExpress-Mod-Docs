@@ -22,7 +22,7 @@
         - [EventManager](ModAPIs/module_funcs/EventManager.md)
         - [FractionManager](ModAPIs/module_funcs/FractionManager.md)
         - [GameTimer](ModAPIs/module_funcs/GameTimer.md)
-        - [ItemManager](ModAPIs/module_funcs/ItemManager.md)
+        <!-- - [ItemManager](ModAPIs/module_funcs/ItemManager.md) -->
         - [MapSystem](ModAPIs/module_funcs/MapSystem.md)
         - [MarketManager](ModAPIs/module_funcs/MarketManager.md)
         - [MissionManager](ModAPIs/module_funcs/MissionManager.md)
@@ -38,3 +38,4 @@
         - [TeamManager](ModAPIs/module_funcs/TeamManager.md)
         - [TradeManager](ModAPIs/module_funcs/TradeManager.md)
         - [WeatherManager](ModAPIs/module_funcs/WeatherManager.md)
+- [关于](./About.md)
