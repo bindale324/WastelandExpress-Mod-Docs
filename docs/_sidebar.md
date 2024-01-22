@@ -4,11 +4,11 @@
 
 - [Mod API](/ModAPIs/)
 
-    - [固有函数](/ModAPIs/stable/stable.md)
+    - [1. 固有函数](/ModAPIs/stable/stable.md)
 
-    - [触发函数](/ModAPIs/trigger_funcs/trigger_funcs.md)
+    - [2. 触发函数](/ModAPIs/trigger_funcs/trigger_funcs.md)
 
-    - [模块函数](/ModAPIs/module_funcs/README.md)
+    - [3. 模块函数](/ModAPIs/module_funcs/README.md)
         <!-- type like: -[xxxxx](/ModAPIs/module_funcs/xxxxx.md) -->
         - [AreaItemManager](/ModAPIs/module_funcs/AreaItemManager.md)
         - [BankManager](/ModAPIs/module_funcs/BankManager.md)

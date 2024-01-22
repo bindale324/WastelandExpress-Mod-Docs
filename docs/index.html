@@ -7,24 +7,52 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- theme -->
+  <!-- <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css"> -->
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: '',
+      name: 'Wasteland Express APIs',
+      repo: 'https://github.com/bindale324/WastelandExpress-Mod-Docs',
       loadSidebar: true,
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
       subMaxLevel: 2,
-      sidebarDisplayLevel: 2
+      sidebarDisplayLevel: 2,
+
+      // complete configuration parameters
+      search: {
+        maxAge: 86400000, // Expiration time, the default one day
+        paths: 'auto', // or 'auto'
+
+        // Localization
+        placeholder: {
+          '/': '在ModAPI中搜索'
+        },
+        // Localization
+        noData: {
+          '/': '找不到结果'
+        },
+
+        hideOtherSidebarContent: true, // whether or not to hide other sidebar content
+      }
     }
   </script>
   <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <!-- plugins -->
+
+  <!-- sidebar collapse -->
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
+  <!-- markdown renderer -->
+  <script src="//unpkg.com/prismjs/components/prism-csharp.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-lua.min.js"></script>
+
+  <!-- enable search -->
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
