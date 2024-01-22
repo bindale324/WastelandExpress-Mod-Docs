@@ -1,7 +1,5 @@
-<div>
-    <center>
-    	<img src="assets/cover.png">
-    </center>
+<div align="center">
+    <img src="assets/cover.png">
 </div>
 
 # Wasteland Express Mod Document Repository
