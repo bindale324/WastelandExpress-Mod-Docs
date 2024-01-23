@@ -3,6 +3,7 @@
 - [入门](examples/README.md)
 
 - [Mod API](/ModAPIs/)
+    - [0. 调用方法 (必读)](/ModAPIs/Description.md)
 
     - [1. 固有函数](/ModAPIs/stable/stable.md)
 

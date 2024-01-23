@@ -1,4 +1,4 @@
-# Wasteland Express API Documents
+# Wasteland Express Mod API Wiki
 
 > 欢迎来到Wasteland Express 废土快递的Mod文档页面！本文档旨在提供详尽的指导和资源，帮助开发者利用Lua接口为《废土快递》创建和开发Mod。
 
