@@ -38,4 +38,5 @@
         - [TeamManager](ModAPIs/module_funcs/TeamManager.md)
         - [TradeManager](ModAPIs/module_funcs/TradeManager.md)
         - [WeatherManager](ModAPIs/module_funcs/WeatherManager.md)
+        - [附录](ModAPIs/module_funcs/Appendix.md)
 - [关于](./About.md)

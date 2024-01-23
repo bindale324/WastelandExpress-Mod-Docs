@@ -1,4 +1,4 @@
-## GetPeople
+## Getpeople
 
 __函数原型__
 
@@ -8,7 +8,7 @@ PeopleData Getpeople();
 
 __描述__
 
-获取人物的数据。
+当前所有人物。
 
 __参数__
 
@@ -16,7 +16,26 @@ __参数__
 
 __返回值__
 
-+ `PeopleData`: 人物数据
++ `PeopleData`: 人物数据，
+  + 这个里面有各种属性，其中有一个叫做`NowPeople`的属性，`NowPeople`的数据类型是`List<Personal>`，表示车上的人。
+
+
+
+> 如果你想获取当前车上所有人的信息，您可以像这样：
+>
+> ```lua
+> local people_on_truck = PeopleManager:Getpeople().NowPeople
+> 
+> -- 尝试打印车上第1个人的信息
+> print(type(people_on_truck))
+> print(people_on_truck[0].PeopleID)
+> ```
+>
+> 这样您就会看到车上第一个人的人物ID。
+
+
+
+有关这些数据的内部成员变量、方法，您可以查看[附录](ModAPIs/module_funcs/Appendix.md) 。
 
 ---
 
@@ -41,28 +60,6 @@ __返回值__
 
 + `Personal`: 人物详细信息类
 
----
-
-## Addpeople
-
-**函数原型**
-
-```csharp
-void Addpeople(int id);
-```
-
-**描述**
-
-向游戏中添加一个人物。
-
-**参数**
-
-- `id`: int类型，表示要添加的人物的ID。
-
-**返回值**
-
-- NULL
-
 ------
 
 ## MovePeople
@@ -75,12 +72,12 @@ void MovePeople(int id, bool next);
 
 **描述**
 
-移动指定ID的人物。
+在车上移动指定ID的人物的位置。
 
 **参数**
 
 - `id`: int类型，表示人物的ID。
-- `next`: bool类型，表示移动的方向或方式。
+- `next`: bool类型，表示移动的方向。
 
 **返回值**
 
@@ -98,12 +95,12 @@ void Deletepeople(int index, int method = 0);
 
 **描述**
 
-删除指定索引位置的人物。
+把车上的某个人踢下车。
 
 **参数**
 
-- `index`: int类型，表示要删除的人物的索引。
-- `method`: int类型，表示删除的方式，默认为0。
+- `index`: int类型，表示要踢下车的人物在车上的位置。
+- `method`: int类型，表示删除的方式，默认为0。（我们也不建议更改这个值）
 
 **返回值**
 
@@ -144,36 +141,23 @@ void ChageStatus(bool IsSingle, int Type, int Value);
 
 **描述**
 
-改变人物的状态。
+该函数会遍历车上的所有人，挨个改变状态。如果遇到单身狗就break循环。且整体逻辑具有随机性。（概率为50%）
 
 **参数**
 
-- `IsSingle`: bool类型，表示是否单独改变状态。
-- `Type`: int类型，表示状态类型。
-- `Value`: int类型，表示状态值。
-
-**返回值**
-
-- NULL
-
-------
-
-## PeopleTalk
-
-**函数原型**
-
-```csharp
-void PeopleTalk(int i, bool InCamp = false);
-```
-
-**描述**
-
-使人物进行对话。
-
-**参数**
-
-- `i`: int类型，表示人物索引。
-- `InCamp`: bool类型，表示人物是否在阵营中，默认为false。
+- `IsSingle`: bool类型，表示是否是单身
+- `Type`: int类型，表示要改变什么属性的值
+  + `Type=0`: 增加战斗力数值
+  + `Type=1`: 增加身体素质
+  + `Type=2`: 增加注意力
+  + `Type=3`: 增加口才
+  + `Type=4`: 增加制作
+  + `Type=5`: 增加智力
+  + `Type=6`: 增加道德
+  + `Type=7`: 增加耕作
+  + `Type=8`: 增加魅力
+  + 注意：**如果传入其他int值，会报错。**
+- `Value`: int类型，表示要增加的属性值
 
 **返回值**
 
@@ -196,6 +180,7 @@ bool TryLikeCurCity(int Poss, bool Like, string Reason, int hero = -1);
 **参数**
 
 - `Poss`: int类型，表示可能性。
+  + 注意在这里是一个int数值，而不是浮点数，比如说可能性是98%的话，直接传入98即可。
 - `Like`: bool类型，表示好感或不好感。
 - `Reason`: string类型，表示原因。
 - `hero`: int类型，表示英雄的ID，默认为-1。
@@ -205,33 +190,6 @@ bool TryLikeCurCity(int Poss, bool Like, string Reason, int hero = -1);
 - `bool`: 操作是否成功。
 
 ------
-
-## TryLikeCity
-
-**函数原型**
-
-```csharp
-bool TryLikeCity(int Poss, bool Like, string Reason, CityData cityData, int map = -1, int hero = -1);
-```
-
-**描述**
-
-尝试让人物对指定城市产生好感或不好感。
-
-**参数**
-
-- `Poss`: int类型，表示可能性。
-- `Like`: bool类型，表示好感或不好感。
-- `Reason`: string类型，表示原因。
-- `cityData`: CityData类型，表示城市数据。
-- `map`: int类型，表示地图ID，默认为-1。
-- `hero`: int类型，表示英雄的ID，默认为-1。
-
-**返回值**
-
-- `bool`: 操作是否成功。
-
----
 
 ## TryLikeEvent
 
@@ -250,6 +208,7 @@ void TryLikeEvent(int TemplateID, bool Like, int Poss = 100);
 - `TemplateID`: int类型，表示事件模板ID。
 - `Like`: bool类型，表示好感或不好感。
 - `Poss`: int类型，表示可能性，默认为100。
+  + 注意在这里是一个int数值，而不是浮点数，比如说可能性是98%的话，直接传入98即可。
 
 **返回值**
 
@@ -275,6 +234,7 @@ void TryLikeEvent(int TemplateID, int PeopleID, bool Like, int Poss = 100);
 - `PeopleID`: int类型，表示人物ID。
 - `Like`: bool类型，表示好感或不好感。
 - `Poss`: int类型，表示可能性，默认为100。
+  + 注意在这里是一个int数值，而不是浮点数，比如说可能性是98%的话，直接传入98即可。
 
 **返回值**
 
@@ -292,7 +252,9 @@ void ChangePeopleToPeopleAttitute(Personal peopleFrom, Personal peopleTo, int At
 
 **描述**
 
-改变两个人物之间的态度。
+改变一个人对另一个人的好感度，如果`Altitude`是正值就是增加好感度，如果是`负值`就降低好感度。
+
+> 注：在Altitude < 2的时候，可能会破坏两人的关系
 
 **参数**
 
@@ -322,7 +284,30 @@ void PeopleFirstAttitude(Personal peopleFrom, Personal peopleTo, bool Hint = fal
 
 - `peopleFrom`: Personal类型，表示来源人物。
 - `peopleTo`: Personal类型，表示目标人物。
-- `Hint`: bool类型，表示是否提示，默认为false。
+- `Hint`: bool类型，表示是否提示，默认为false。（不建议修改该值）
+
+**返回值**
+
+- NULL
+
+---
+
+## PeopleTalk
+
+**函数原型**
+
+```csharp
+void PeopleTalk(int index, bool InCamp = false);
+```
+
+**描述**
+
+让车上的人聊天。
+
+**参数**
+
+- `i`: int类型，表示车上的哪个人开始说话。
+- `InCamp`: bool类型，表示是否在营地中。
 
 **返回值**
 
@@ -363,7 +348,7 @@ bool TryMakeLove();
 
 **描述**
 
-尝试让人物陷入恋爱。
+尝试开始进行鱼水之欢。这个函数会先开始查询队伍中每个人的状态，如果状态合适会执行鱼水之欢代码逻辑，也就是降低压力值。
 
 **参数**
 
@@ -371,7 +356,7 @@ bool TryMakeLove();
 
 **返回值**
 
-- `bool`: 操作是否成功。
+- `bool`: 是否操作成功。
 
 ------
 
@@ -418,4 +403,26 @@ bool CheckGenderEffettive(Personal peopleFrom, Personal peopleTo);
 
 **返回值**
 
-- `bool`: 检查是否成功。
+- `bool`: 两人是否产生可能 （？）
+
+---
+
+## CheckLoveInDifferentPlace
+
+**函数原型**
+
+```csharp
+void CheckLoveInDifferentPlace();
+```
+
+**描述**
+
+检查车上每个人对该地点的感觉。也就是到了某个地方之后，每个人的感觉变化
+
+**参数**
+
+- NULL
+
+**返回值**
+
++ NULL
