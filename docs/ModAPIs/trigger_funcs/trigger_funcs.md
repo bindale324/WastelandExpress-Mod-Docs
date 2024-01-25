@@ -221,7 +221,7 @@ end
 
 **描述**
 
-烹饪之后执行。
+完成烹饪**之后**执行。
 
 > 如果此函数返回true，则会阻止获得物品（菜谱和成就还是会正常获得）。
 
@@ -229,8 +229,9 @@ end
 
 **参数**
 
-+ `ingredients`: table数组，含有5个元素的数组，代表合成原料的ID
-+ `result`: table数组，存放的元素是`Food`，表示烹饪结果。
++ `ingredients`: `List<int>`类型，在Lua中打印出来会是`userdata`，含有5个元素的数组，代表合成原料的ID
+  + 有关`List`类型的解读，请看[这里](ModAPIs/module_funcs/Appendix.md) 。
++ `result`: `List<Food>`类型，存放的元素是`Food`，表示已经获得的烹饪结果。
 
 ## OnEat
 

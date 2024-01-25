@@ -53,3 +53,19 @@ local p_info = PeopleManager:GetPeopleByID(123)
 - TeamManager
 - TradeManager
 - WeatherManager
+
+
+
+## 强调
+
+在`Lua`中，如果您在**调用任何方法**的时候，遇到了`attempt to index a nil value`这种报错，大概率是因为：
+
+**你没有使用`:`调用方法，而是直接使用了`.`符号。**
+
+在Lua中，一定要在最后使用`:`连接您的方法，例如：
+
+```lua
+PeopleManager:GetPeopleByID(123)
+item.Characteristic:ContainsKey("ItemBuff_DontAutoEat")
+```
+
