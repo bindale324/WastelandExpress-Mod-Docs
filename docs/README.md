@@ -19,7 +19,7 @@
 
 
 
-### 游戏数据百科
+### 游戏攻略百科
 
 在开发的过程中，相信您一定想要查阅各个角色、物品的详细信息，您可以通过以下链接，查看您想要查看的数据表格，以便制作Mod：
 
@@ -35,6 +35,14 @@
 
 
 > 以上友链，来自[废土快递攻略百科](https://xjwiki.github.io/wastelandExpress/index.html)，由[XJ.Chen](https://github.com/xjwiki) (*Organization*) 提供维护支持。
+
+
+
+### 游戏数据百科
+
+如果您想查看游戏数据的详细资料，您可以导航到[游戏数据](database/README.md)查看详情资料
+
+
 
 
 

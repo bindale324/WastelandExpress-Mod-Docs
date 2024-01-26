@@ -1,6 +1,4 @@
-# Appendix
-
-
+# Wasteland Express Data Interface Description
 
 ## `uiname`
 

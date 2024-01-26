@@ -230,7 +230,7 @@ end
 **参数**
 
 + `ingredients`: `List<int>`类型，在Lua中打印出来会是`userdata`，含有5个元素的数组，代表合成原料的ID
-  + 有关`List`类型的解读，请看[这里](ModAPIs/module_funcs/Appendix.md) 。
+  + 有关`List`类型的解读，请看[这里](data_desc/Appendix.md) 。
 + `result`: `List<Food>`类型，存放的元素是`Food`，表示已经获得的烹饪结果。
 
 ## OnEat

@@ -1,0 +1,12 @@
+﻿Jobs,Image,Name,NeedStatus,NeedStatusDescription,NeedStatusNum,Craft,Change
+Land,Land,田地,Farm,耕作,15,1000|1001|1003|1008|1009,Tree|Ranch
+Tree,Tree,树场,Farm,耕作,15,1002|1004|1005|1006|1007|1010,Land|Ranch
+Water,Water,水泵,Farm,耕作,5,1043,
+Ranch,Ranch,牧场,Cultivation,饲养,9,1011|1012|1013|1014,Land|Tree
+Shop,Shop,采购部,Eloquence,口才,15,1015,
+BaseFactory,BaseFactory,基础轻工坊,Craft,手工,10,1016|1017|1018|1019|1020|1021|1022|1023|1024|1025|1026|1027,
+AdvanceFactory,AdvanceFactory,高级轻工坊,Craft,手工,10,1028|1029|1030|1031|1032|1033|1034|1035|1036|1037|1039,
+MetalFactory,MetalFactory,金石厂,Craft,手工,25,1040|1041,
+HeavyFactory,HeavyFactory,重工厂,Craft,手工,20,1042|1038,
+Defence,Defence,城防部,Battle,战斗力,5,,Repair
+Repair,Repair,修理部,Craft,手工,10,,Defence

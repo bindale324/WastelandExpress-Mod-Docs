@@ -1,0 +1,106 @@
+/Equip,Type,InitChoose,Name,IconID,Description,Level,Price,Time,Weight,BuffID,Func,FuncPlus,NeedSource,,,,,SyType//合成的类型，比如说战斗，轮胎之类的,AttackRange
+9000,HandFight,1,刀片,9000,战斗力+<Description>,5,50,10,8,-1,AddBattle:3,1,11002_2,,,,,Battle,0|0
+9001,HandFight,1,钢钉,9001,战斗力+<Description>,5,60,10,8,-1,AddBattle:3,1,11002_2,,,,,Battle,0|0
+9002,HandFight,1,球棒,9002,战斗力+<Description>,7,75,10,8,-1,AddBattle:3,1,11002_2,,,,,Battle,0|0
+9003,HandFight,1,木棒,9003,战斗力+<Description>,6,55,10,8,-1,AddBattle:3,1,11002_2,,,,,Battle,0|0
+9004,HandFight,1,铁棒,9004,战斗力+<Description>,6,45,10,8,-1,AddBattle:3,1,11002_2,,,,,Battle,0|0
+9005,HandFight,1,钢管,9005,战斗力+<Description>%,10,250,20,8,-1,MutiplyBattle:40,5,9004_1|11012_10|9002_1,,废铁10,球棒,,Battle,0|0
+9006,HandFight,1,钉刺球棒,9006,战斗力+<Description>,12,260,15,8,-1,AddBattle:5,1,9003_1|9001_1|9002_1,,钢钉,球棒,,Battle,0|0
+9007,HandFight,1,合成刀,9007,战斗力+<Description>,15,500,18,8,-1,AddBattle:6,1,11002_20|9000_1|11007_1,,刀片,原料块1,,Battle,0|0
+9008,HandFight,0,砍刀,9008,战斗力+<Description>%,15,700,30,8,-1,MutiplyBattle:50,5,9000_1|9007_1|11003_1,,合成刀,接合物件1,,Battle,0|0
+9073,HandFight,0,武士刀,9073,战斗力+<Description>,18,800,25,8,-1,AddBattle:9,5,9007_1|11003_1|11004_1,,,,,Battle,0|0
+9074,HandFight,0,阔刀,9074,战斗力+<Description>%,18,1000,40,8,-1,MutiplyBattle:60,5,9008_1|11003_1|11004_1,,,,,Battle,0|0
+9075,HandFight,0,电锯,9075,战斗力+<Description>,20,1200,50,8,-1,AddBattle:15,5,,,,,,Battle,0|0
+9087,HandFight,0,战斧,9087,战斗力+<Description>% \r\n【遗迹战斗】重击可攻击范围内所有敌人,30,1700,60,8,-1,MutiplyBattle:45|DungeonMultiAttack:1,5,,,,,,Battle,0|0
+,,,,,,,,,,,,,,,,,,,
+9012,HandShoot,1,弹夹,9012,射击精度+<Description>%,6,30,10,5,-1,AddAccuracy:5,2,11002_1,,,,,Battle,
+9013,HandShoot,1,瞄准镜,9013,射击精度+<Description>%,6,55,10,5,-1,AddAccuracy:5,2,11011_5,,,,,Battle,
+9014,HandShoot,1,枪托,9014,射击精度+<Description>%,6,45,10,5,-1,AddAccuracy:5,2,11002_1,,,,,Battle,
+9015,HandShoot,1,扼流圈,9015,射击精度+<Description>%,6,65,10,5,-1,AddAccuracy:5,2,11002_1,,,,,Battle,
+9016,HandShoot,1,垂直握把,9016,射击精度+<Description>%,10,280,20,5,-1,AddAccuracy:10,3,9014_1|11012_10|11001_2,,废铁10,齿轮2,,Battle,
+9017,HandShoot,1,二倍镜,9017,射击精度+<Description>%,12,320,20,5,-1,AddAccuracy:10,3,9013_1|11011_5|11003_2,,玻璃5,接合物件2,,Battle,
+9018,HandShoot,1,枪口补偿器,9018,射击精度+<Description>%,15,300,20,5,-1,AddAccuracy:10,4,9015_1|11004_2|11003_2,,小组件2,接合物件2,,Battle,
+9019,HandShoot,1,直角握把,9019,射击精度+<Description>%,15,790,40,5,-1,AddAccuracy:25,4,9016_1|9014_1|11001_2,,枪托,齿轮2,,Battle,
+9020,HandShoot,0,四倍镜,9020,射击精度+<Description>%,20,870,40,5,-1,AddAccuracy:25,5,9017_1|9013_1|11003_2,,瞄准镜,接合物件2,,Battle,
+9021,HandShoot,0,消焰器,9021,射击精度+<Description>%,30,850,40,5,-1,AddAccuracy:25,5,9017_1|9015_1|11001_2,,扼流圈,齿轮2,,Battle,
+9022,HandShoot,0,八倍镜,9022,射击精度+<Description>%,40,1800,70,5,-1,AddAccuracy:50,5,9017_1|9020_1|9013_1,,二倍镜,瞄准镜,,Battle,
+9069,HandShoot,0,扩容弹匣,9069,弹耗+<Description>,20,800,40,5,-1,AddShoot:2,5,11002_1|11003_1,,,,,Battle,
+9070,HandShoot,0,收束器,9070,伤害+<Description>,30,1200,40,5,-1,AddDamage:1,5,11002_1|11004_1,,,,,Battle,
+9071,HandShoot,0,刺刀,9071,战斗力+<Description>,30,1100,40,5,-1,AddBattle:3,5,11012_10|11007_1,,,,,Battle,
+9072,HandShoot,0,战术手电,9072,射击精度+<Description>%,30,870,40,5,-1,AddAccuracy:25,5,11010_1|11007_1,,,,,Battle,
+,,,,,,,,,,,,,,,,,,,
+9051,Gun,1,土质铁炮,9051,弹耗：<Description> |精度：+30% |伤害：1-5,10,300,25,12,-1,AddShoot:1|AddAccuracy:30|AddDamage:3,1,11012_5,,废铁5,,,Battle,2|5
+9009,Gun,1,鸟枪,9009,弹耗：<Description> |精度：+10% |伤害：1-4,15,750,40,12,-1,AddShoot:3|AddAccuracy:10|AddDamage:2,1,9005_1|11002_5|11003_1,,铁质物品5,接合物件1,,Battle,1|4
+9010,Gun,1,土枪,9010,弹耗：<Description> |精度：+15% |伤害：1-5,15,1150,30,12,-1,AddShoot:2|AddAccuracy:15|AddDamage:3,1,9005_1|11012_10|11010_10,,废铁10,锡箔10,,Battle,3|6
+9011,Gun,1,简易手枪,9011,弹耗：<Description> |精度：+20% |伤害：1-5,20,1700,35,12,-1,AddShoot:2|AddAccuracy:25|AddDamage:3,1,9009_1|9010_1|11001_1,,土枪,神秘物质1,,Battle,0|3
+9052,Gun,1,猎枪,9052,弹耗：<Description> |精度：+60% |伤害：3-7,20,2000,25,12,-1,AddShoot:1|AddAccuracy:60|AddDamage:5,1,,,,,,Battle,3|7
+9053,Gun,1,栓动步枪,9053,弹耗：<Description> |精度：+40% |伤害：2-6,30,2250,80,12,-1,AddShoot:2|AddAccuracy:60|AddDamage:4,1,,,,,,Battle,4|8
+9054,Gun,0,半自动步枪,9054,弹耗：<Description> |精度：+40% |伤害：2-6,30,2500,80,12,-1,AddShoot:3|AddAccuracy:50|AddDamage:4,2,,,,,,Battle,3|7
+9055,Gun,0,泵动散弹枪,9055,弹耗：<Description>|精度：+10% |伤害：1-5,40,3000,120,12,-1,AddShoot:12|AddAccuracy:15|AddDamage:3,4,,,,,,Battle,0|3
+9056,Gun,0,冲锋枪,9056,弹耗：<Description> |精度：+15% |伤害：1-5,40,3000,120,12,-1,AddShoot:10|AddAccuracy:20|AddDamage:3,6,,,,,,Battle,0|4
+9057,Gun,0,自动步枪,9057,弹耗：<Description> |精度：+50% |伤害：3-7,40,5000,120,12,-1,AddShoot:5|AddAccuracy:50|AddDamage:5,3,,,,,,Battle,2|6
+9058,Gun,0,狙击步枪,9058,精度：<Description> |弹耗：+1 |伤害：13-17,40,3000,120,12,-1,AddAccuracy:100|AddShoot:1|AddDamage:15,20,,,,,,Battle,5|9
+9090,Gun,0,战术霰弹枪,9090,弹耗：<Description> |精度：+30% |伤害：3-7,50,4000,120,12,-1,AddShoot:9|AddAccuracy:30|AddDamage:5,6,,,,,,Battle,1|6
+9080,Gun,0,阻击枪,9080,弹耗：<Description> |精度：+50% |伤害：2-6  \r\n【遗迹战斗】可击退敌方目标,50,4000,120,12,-1,AddShoot:4|AddAccuracy:50|AddDamage:4|DungeonAttackRepel:1,6,,,,,,Battle,1|7
+9085,Gun,0,制退枪,9085,弹耗：<Description> |精度：+10% |伤害：2-6  \r\n【遗迹战斗】可击退敌方目标,40,3000,120,12,-1,AddShoot:10|AddAccuracy:15|AddDamage:4|DungeonAttackRepel:1,5,,,,,,Battle,0|3
+,,,,,,,,,,,,,,,,,,,
+9059,Throw,1,起爆物,9059,一次性使用|攻击：<Description>,10,300,10,10,-1,AddThrow:15,5,,,,,,Battle,0|1
+9060,Throw,1,土制炸弹,9060,一次性使用|攻击：<Description>,12,500,20,10,-1,AddThrow:20,5,,,,,,Battle,0|1
+9061,Throw,1,军用手雷,9061,一次性使用|攻击：<Description>,12,800,30,10,-1,AddThrow:30,5,,,,,,Battle,0|2
+9062,Throw,0,燃烧弹,9062,一次性使用|攻击：<Description>,10,300,10,10,-1,AddThrow:15,5,,,,,,Battle,0|2
+9063,Throw,0,神秘种子,9063,一次性使用|攻击：<Description>,40,350,5,10,-1,AddThrow:20,0,,,,,,,0|2
+9086,Throw,0,闪光弹,9086,一次性使用|攻击：<Description>  \r\n【遗迹战斗】使命中的敌方单位眩晕一回合,15,500,15,10,-1,AddThrow:15|DungeonThrowVertigo:1,5,,,,,,Battle,0|2
+9081,Throw,0,震撼弹,9081,一次性使用|攻击：<Description>  \r\n【遗迹探索】受到敌人突然袭击时，可避免一次后手战斗,15,600,20,10,-1,AddThrow:15,5,,,,,,Battle,0|2
+,,,,,,,,,,,,,,,,,,,
+9023,Body,1,运动服,9023,魅力+<Description> 身体素质+1,10,100,30,5,-1,AddCharm:1|AddBody:1,1,11006_4,,,,,Others,
+9024,Body,1,女装,9024,魅力+<Description>,10,100,30,5,-1,AddCharm:2,1,11006_4,,,,,Others,
+9025,Body,1,户外服,9025,采集+<Description>|打猎+5,35,300,60,3,-1,AddCollect:4|AddHunt:5,1,11006_4,,,,,Others,
+9026,Body,1,战斗服,9026,魅力+<Description> 身体素质+2,15,125,40,5,-1,AddCharm:1|AddBody:2,1,11006_4|11000_1,,神秘物质1,,,Others,
+9067,Body,0,农作服,9067,耕作+<Description>,35,100,60,3,-1,AddFarm:4,1,,,,,,,
+9068,Body,0,饲养服,9068,饲养+<Description>,35,100,60,3,-1,AddCultivation:2,1,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+9027,Body,1,板甲,9027,防御力+<Description>,6,50,20,10,-1,AddDefend:10,2,11006_1|11008_1|11009_1,,废旧报纸1,皮革1,,Others,
+9028,Body,1,护膝,9028,防御力+<Description>,10,85,25,10,-1,AddDefend:15,2,11006_1|11008_1|11012_1,,废旧报纸1,废铁1,,Others,
+9029,Body,1,护腕,9029,防御力+<Description>,12,100,25,10,-1,AddDefend:15,2,11006_1|11009_1|11012_1,,皮革1,废铁1,,Others,
+9030,Head,1,头盔,9030,防御力+<Description>,15,125,25,10,-1,AddDefend:15,3,11006_1|11008_1|11012_1,,废旧报纸1,废铁1,,Others,
+9031,Body,1,防弹衣,9031,防御力+<Description>,15,125,60,15,-1,AddDefend:30,5,11006_2|11002_1|11012_8,,铁质物品1,废铁8,,Others,
+9032,Body,1,装甲,9032,防御力+<Description>,20,280,80,20,-1,AddDefend:40,6,9029_1|9028_1|9030_1,,护腕,头盔,,Others,
+9033,Body,0,防爆盾,9033,防御力+<Description>,30,370,110,20,-1,AddDefend:50,6,9031_1|11011_1|11009_2,,玻璃1,皮革2,,Others,
+9034,Body,0,防爆装,9034,防御力+<Description>,40,800,150,30,-1,AddDefend:75,8,9031_1|9032_1|9033_1,,装甲,防爆盾,,Others,
+9082,Body,0,小背包,9082,【遗迹探索】增加<Description>负重|防御力+5,20,600,40,10,-1,AddCapacity:70|AddDefend:5,5,,,,,,Others,
+9083,Body,0,登山背包,9083,【遗迹探索】增加<Description>负重|防御力+5,30,800,60,8,-1,AddCapacity:110|AddDefend:5,5,,,,,,Others,
+9084,Body,0,军用背包,9084,【遗迹探索】增加<Description>负重|防御力+5,40,1200,100,5,-1,AddCapacity:150|AddDefend:5,5,,,,,,Others,
+9088,Body,0,防寒服,9088,防御力+<Description>  \r\n【遗迹探索】使成员无视冰川遗迹负面影响,35,600,60,3,-1,AddDefend:10|DungeonColdProofClothing:1,3,,,,,,Others,
+9089,Body,0,隔热服,9089,防御力+<Description>  \r\n【遗迹探索】使成员无视火山遗迹负面影响,35,600,60,3,-1,AddDefend:10|DungeonHotProofClothing:1,3,,,,,,Others,
+,,,,,,,,,,,,,,,,,,,
+9035,Hand,0,镇定剂瓶,9035,受伤后不会死亡,100,3000,3,1,-1,Tranquilizer:1,0,,,,,,Others,
+9036,Head,1,鬼面具,9036,战斗力+<Description>%,100,3000,1,3,-1,MutiplyBattle:30,0,,,,,,Others,
+9037,Head,1,棒球帽,9037,口才+<Description> 魅力+1,10,90,10,3,-1,AddEloquence:5|AddCharm:1,1,11006_4,,,,,Others,
+9038,Head,1,头巾,9038,采集+<Description>,35,300,20,3,-1,AddCollect:4,3,,,,,,Others,
+9039,Head,1,针织帽,9039,魅力+<Description>  身体素质+1,15,100,30,3,-1,AddCharm:1|AddBody:1,1,11006_1|11008_1|11009_1,,,,,Others,
+9040,Head,1,安全帽,9040,手工+<Description>,12,140,20,3,-1,AddCraft:5,1,11006_1|11008_1|11012_1,,,,,Others,
+9041,Head,0,电工帽,9041,手工+<Description>%,20,480,30,3,-1,MutiplyCraft:10,3,9041_1|11008_1|11012_1,,,,,Others,
+9042,Head,0,高级电工帽,9042,手工+<Description>%,25,850,50,3,-1,MutiplyCraft:20,4,9041_2|9042_1|11012_1,,,,,Others,
+9043,Head,0,工程师帽,9043,手工+<Description>%,30,1100,75,3,-1,MutiplyCraft:30,5,9042_1|11008_3|11012_3,,,,,Others,
+9044,Head,1,墨镜,9044,口才+<Description> 魅力+2,15,180,15,3,-1,AddEloquence:5|AddCharm:2,1,11011_5,,,,,Others,
+9045,Head,1,眼镜,9045,注意力+<Description> 魅力+1,20,270,25,3,-1,AddAttention:5|AddCharm:1,1,11011_5,,,,,Others,
+9046,Head,1,鸭舌帽,9046,口才+<Description>% 魅力+1,18,550,20,3,-1,MutiplyEloquence:15|AddCharm:1,3,11006_2|11008_2|11009_2,,,,,Others,
+9047,Head,0,小白帽,9047,口才+<Description>% 魅力+1,25,870,40,3,-1,MutiplyEloquence:30|AddCharm:1,4,11006_3|9047_1|11009_1,,,,,Others,
+9048,Head,0,牛仔帽,9048,口才+<Description>% 魅力+1,30,1100,60,3,-1,MutiplyEloquence:50|AddCharm:1,4,11006_1|9047_3|11009_3,,,,,Others,
+9049,Head,0,礼帽,9049,口才+<Description>% 魅力+1,30,1350,80,3,-1,MutiplyEloquence:75|AddCharm:1,5,11006_4|11008_1|11009_5,,,,,Others,
+9050,Head,1,军官帽,9050,道德+<Description> 魅力+1,40,1100,40,3,-1,AddMorality:3|AddCharm:1,1,11006_5|11008_5|11009_8,,,,,Others,
+9064,Head,1,猎人帽,9064,打猎+<Description>,35,480,35,3,-1,AddHunt:8,2,,,,,,Others,
+9065,Head,0,农夫帽,9065,耕作+<Description>,35,480,35,3,-1,AddFarm:5,1,,,,,,Others,
+9076,Head,1,囚徒面具,9076,道德<Description> 魅力-2,40,1300,35,3,-1,AddMorality:-5|AddCharm:-2,2,,,,,,Others,
+9077,Head,0,雪绒帽,9077,魅力+<Description>  身体素质+2,40,1100,40,3,-1,AddCharm:1|AddBody:2,1,,,,,,Others,
+9078,Head,0,探照头盔,9078,防御力+<Description> 注意力+5  \r\n【遗迹探索】小队探测半径+1(不可叠加),40,1200,35,3,-1,AddDefend:10|AddAttention:5|DungeonLight:1,1,,,,,,Others,
+9079,Head,0,防风面罩,9079,防御力+<Description>  \r\n【遗迹探索】小队可在寒风路面中正常进行侦察,40,1500,40,3,-1,AddDefend:15|AddBody:2|DungeonWindMask:1 ,2,,,,,,Others,
+,,,,,,,,,,,,,,,,,,,
+9900,Pet,1,鹦鹉,9900,食量+<Description> |按饲养等级增加口才,5,500,1,1,-1,AddEat:1|AddEloquenceByCultivation:0,0,,,,,,Others,
+9901,Pet,1,猎犬,9901,食量+<Description> |按饲养等级增加打猎,5,300,1,30,-1,AddEat:1|AddHuntByCultivation:0,0,,,,,,Others,
+9902,Pet,1,斗犬,9902,食量+<Description> |按饲养等级增加战斗力,5,1000,1,30,-1,AddEat:5|AddBattleByCultivation:0,0,,,,,,Others,
+9903,Pet,1,猎鹰,9903,食量+<Description> |按饲养等级增加注意力,5,1500,1,10,-1,AddEat:4|AddAttentionByCultivation:0,0,,,,,,Others,
+9904,Pet,1,猫猫,9904,食量+<Description> |按饲养等级增加压力上限,5,300,1,10,-1,AddEat:1|AddMoodByCultivation:10,0,,,,,,Others,
+9905,Pet,1,猫猫,9905,食量+<Description> |按饲养等级增加压力上限,5,300,1,10,-1,AddEat:1|AddMoodByCultivation:10,0,,,,,,Others,
+9906,Pet,1,猫猫,9906,食量+<Description> |按饲养等级增加压力上限,5,300,1,10,-1,AddEat:1|AddMoodByCultivation:10,0,,,,,,Others,
+9907,Pet,0,丧尸鸡,9907,食量+<Description> |按饲养等级增加战斗力,5,1500,1,30,-1,AddEat:1|AddBattleByCultivation:0,0,,,,,,Others,

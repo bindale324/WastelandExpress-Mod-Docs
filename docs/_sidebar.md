@@ -39,5 +39,6 @@
         - [TeamManager](ModAPIs/module_funcs/TeamManager.md)
         - [TradeManager](ModAPIs/module_funcs/TradeManager.md)
         - [WeatherManager](ModAPIs/module_funcs/WeatherManager.md)
-        - [附录](ModAPIs/module_funcs/Appendix.md)
+- [Lua数据接口](data_desc/Appendix.md)
+- [游戏数据：开发者Reference](database/README.md)
 - [关于](./About.md)
