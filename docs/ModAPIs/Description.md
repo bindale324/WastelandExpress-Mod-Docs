@@ -97,9 +97,53 @@ local p_info = PeopleManager:GetPeopleByID(123)
 
 
 
-## 4. 其他
 
-以上两种调用方法，都是在调用`ModuleEnum`模块中的类、与其成员方法。
+
+## 4. 高级：修改/重写其他函数的功能
+
+上面提供的所有方法，都是《废土快递》官方给大家提供的接口，也可以理解为程序入口。
+
+如果您想修改某个函数特定的行为，做一个类似于Hook的功能，您可能遇到这样的情况：
+
++ 我想要修改`交易`部分的函数，在交易的时候做一些其他事情。
++ *但是官方的API并没有为我提供`交易`相关的触发函数，我应该怎么入手呢？*
+
+
+
+您可以通过官方提供的`ModFunc()`函数，直接修改原函数的行为，例如：
+
+```lua
+ModFunc(CS.TradeManager, "TradeAction", 
+    function (self, TradeSellContent, TradeBuyContent, CurrentTraderID)
+        self:TradeAction(TradeSellContent, TradeBuyContent, CurrentTraderID);
+        
+        print("TradeAction triggered");
+        print(TradeSellContent);
+        print(TradeBuyContent);
+    end)
+```
+
+`ModFunc`函数接受三个参数：
+
++ 类名
++ 方法名
++ 您重新定义的函数
+
+由于Lua函数式编程的特性，一个函数可以被赋值给其他变量，也能作为一个参数变量传入函数当中，所以就有了上面的语法。
+
+在自定义的函数内部，您可以通过调用：`self:TradeAction()`来首先执行原本函数的逻辑，然后再在下方书写您自己的逻辑。
+
+
+
+
+
+
+
+
+
+### 注意: 如何调用其他函数？
+
+以上介绍的`调用模块函数方法`，都是在调用`ModuleEnum`模块中的类、与其成员方法。
 
 但是实际上，《废土快递》可以被调用的函数远不止这些，如果您想要调用`ModuleEnum`之外的其他函数，上述两种方法都不奏效了。
 
@@ -121,6 +165,13 @@ CS.QxFramework.Core.UIManager.Instance:Open("CookUI")
 + `Instance`表示在一个实例中调用。在之前的那些API中，是已经打开了游戏加载了存档之后才能调用的，所以他们默认在实例中。而沿用这里的调用方式，您需要指明实例，所以有了`Instance`的前缀。
 + `:`表示在类外面调用这个类的方法，按照Lua的语法需要使用`:`
 + `Open`: 这是`UIManager`中的成员函数。
+
+
+
+在上方所有演示的功能中，您需要注意两个点：
+
++ 在调用一个方法之前，请首先确定它的命名空间、类名。如果您只提供了类名，而没有提供命名空间，那大概率会报错的。
++ 在最终完成一个方法的调用的时候，请注意这时候需要使用`:`符号，而不再是`.`   这是由C#于Lua的语法共同决定的。
 
 
 
