@@ -135,6 +135,78 @@ ModFunc(CS.TradeManager, "TradeAction",
 
 
 
+```c#
+static string getDelegateName(MethodDefinition method)
+{
+    string fieldName = method.Name;
+    if (fieldName.StartsWith("."))
+    {
+        fieldName = fieldName.Substring(1);
+    }
+    string ccFlag = method.IsConstructor ? "_c" : "";
+    string luaDelegateName = null;
+    var type = method.DeclaringType;
+    for (int i = 0; i < MAX_OVERLOAD; i++)
+    {
+        string tmp = ccFlag + "__Hotfix" + i + "_" + fieldName;
+        if (!type.Fields.Any(f => f.Name == tmp)) // injected
+        {
+            luaDelegateName = tmp;
+            break;
+        }
+    }
+    return luaDelegateName;
+}
+```
+
+```c#
+bool injectMethod(MethodDefinition method, HotfixFlagInTool hotfixType)
+        {
+            var type = method.DeclaringType;
+            
+            bool isFinalize = (method.Name == "Finalize" && method.IsSpecialName);
+
+            MethodReference invoke = null;
+
+            int param_count = method.Parameters.Count + (method.IsStatic ? 0 : 1);
+
+            if (!findHotfixDelegate(method, out invoke, hotfixType))
+            {
+                Error("can not find delegate for " + method.DeclaringType + "." + method.Name + "! try re-genertate code.");
+                return false;
+            }
+
+            if (invoke == null)
+            {
+                throw new Exception("unknow exception!");
+            }
+
+#if XLUA_GENERAL
+            invoke = injectAssembly.MainModule.ImportReference(invoke);
+#else
+            invoke = injectAssembly.MainModule.Import(invoke);
+#endif
+
+            FieldReference fieldReference = null;
+            VariableDefinition injection = null;
+            bool isIntKey = hotfixType.HasFlag(HotfixFlagInTool.IntKey) && !type.HasGenericParameters && isTheSameAssembly;
+            //isIntKey = !type.HasGenericParameters;
+
+            if (!isIntKey)
+            {
+                injection = new VariableDefinition(invoke.DeclaringType);
+                method.Body.Variables.Add(injection);
+
+                var luaDelegateName = getDelegateName(method);	// 在这里
+                if (luaDelegateName == null)
+                {
+                    Error("too many overload!");
+                    return false;
+                }
+```
+
+
+
 
 
 

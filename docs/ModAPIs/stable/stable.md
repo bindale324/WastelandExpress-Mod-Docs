@@ -145,3 +145,13 @@ OpenDialog(title, content)
 
 + `title`: string，对话框标题。
 + `content`: string， 对话框内容。
+
+案例：
+
+```lua
+function OnDrinkWater(personal)
+    OpenDialog("test", "test_content");
+end
+```
+
+![open_dialog](../assets/open_dialog.png)
